@@ -1,0 +1,3 @@
+[submodule "public/learn"]
+	path = public/learn
+	url = git@bitbucket.org:scallopx/scallop-learn-landing-page.git

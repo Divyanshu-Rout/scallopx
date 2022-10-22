@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'ClashGrotesk-Semibold';
+  src: url('ClashGrotesk-Semibold.woff2') format('woff2'),
+       url('ClashGrotesk-Semibold.woff') format('woff'),
+       url('ClashGrotesk-Semibold.ttf') format('truetype');
+       font-weight: 600;
+       font-display: swap;
+       font-style: normal;
+}

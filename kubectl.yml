@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scallopx-com
+  labels:
+    app: scallopx-com
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scallopx-com
+  template:
+    metadata:
+      labels:
+        app: scallopx-com
+    spec:
+      containers:
+      - name: scallopx-com
+        image: 880887096417.dkr.ecr.eu-west-2.amazonaws.com/scallop/frontend/scallopx.com:latest
+        resources:
+          limits:
+            memory: 1024Mi
+            cpu: "0.5"
+          requests:
+            memory: 100Mi
+            cpu: "0.1"
+        ports:
+        - containerPort: 80
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: scallopx-com
+spec:
+  selector:
+    app: scallopx-com
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
